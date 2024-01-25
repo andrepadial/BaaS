@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Change\App\" />
+    <Folder Include="Change\Models\Results\" />
+    <Folder Include="Change\Models\Signatures\" />
+    <Folder Include="Change\Repositories\" />
+    <Folder Include="Change\Services\" />
+    <Folder Include="CRK\App\" />
+    <Folder Include="CRK\Models\Results\" />
+    <Folder Include="CRK\Models\Signatures\" />
+    <Folder Include="CRK\Repositories\" />
+    <Folder Include="CRK\Services\" />
+    <Folder Include="Funcao\App\" />
+    <Folder Include="Funcao\Models\Results\" />
+    <Folder Include="Funcao\Models\Signatures\" />
+    <Folder Include="Funcao\Repositories\" />
+    <Folder Include="Funcao\Services\" />
+    <Folder Include="JD\App\" />
+    <Folder Include="JD\Models\Results\" />
+    <Folder Include="JD\Models\Signatures\" />
+    <Folder Include="JD\Repositories\" />
+    <Folder Include="JD\Services\" />
+    <Folder Include="Matera\App\" />
+    <Folder Include="Matera\Models\Results\" />
+    <Folder Include="Matera\Models\Signatures\" />
+    <Folder Include="Matera\Repositories\" />
+    <Folder Include="Matera\Services\" />
+  </ItemGroup>
+
+</Project>
