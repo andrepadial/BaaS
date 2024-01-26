@@ -1,4 +1,5 @@
-﻿using BaaS.Interfaces.Autbank.Models.Results;
+﻿using BaaS.Interfaces.Autbank.App;
+using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
 using BaaS.Interfaces.Autbank.Services;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BaaS.App.Autbank
 {
-    public class EBankApp : IEBankService
+    public class EBankApp : IEBankApp
     {
 
         private readonly IEBankService eBankService;

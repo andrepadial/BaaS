@@ -90,13 +90,7 @@ namespace BaaS.API
                 SupportedUICultures = supportedCultures
             });
 
-            //app.UseDayApiMiddleware(new DayApiOptions
-            //{
-            //    CodSistema = Sistema.CODIGO,
-            //    SyslogEnable = true,
-            //    LogBacenEnable = false
-            //});
-
+            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -107,7 +101,7 @@ namespace BaaS.API
 
             ContainerBuilder.Container().Verify();
 
-            app.UseMvc();
+            //app.UseMvc();
         }
 
         private static void IntegrateSimpleInjector(IServiceCollection services)

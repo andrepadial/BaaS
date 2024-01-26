@@ -1,6 +1,8 @@
 ﻿using System;
 using BaaS.App.Autbank;
 using BaaS.Interfaces.Autbank.App;
+using BaaS.Interfaces.Autbank.Repositories;
+using BaaS.Interfaces.Autbank.Services;
 using BaaS.Repositories.Autbank;
 using BaaS.Services.Autbank;
 using SimpleInjector;
@@ -32,17 +34,17 @@ namespace BaaS.Ioc
 
         private static void RegisterApplications()
         {
-            _container.Register<EBankApp>();
+            _container.Register<IEBankApp, EBankApp>(Lifestyle.Scoped);
         }
 
         private static void RegisterServices()
         {
-            _container.Register<EBankService>();
+            _container.Register<IEBankService, EBankService>(Lifestyle.Scoped);
         }
 
         private static void RegisterRepositories()
         {
-            _container.Register<EBankRepository>();
+            _container.Register<IEBankRepository, EBankRepository>(Lifestyle.Scoped);
         }
 
         private static void RegisterProxys()
