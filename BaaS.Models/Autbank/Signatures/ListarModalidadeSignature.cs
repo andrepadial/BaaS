@@ -9,6 +9,6 @@ namespace BaaS.Models.Autbank.Signatures
 {
     public class ListarModalidadeSignature : IListarModalidadeSignature
     {
-        public string Codigo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Codigo {get; set; }
     }
 }

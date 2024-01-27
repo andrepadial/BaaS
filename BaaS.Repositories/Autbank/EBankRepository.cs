@@ -1,6 +1,6 @@
 ﻿using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
-using BaaS.Interfaces.Autbank.Repositories;
+using BaaS.Repositories.Autbank.Interfaces;
 using BaaS.Repositories.Connections;
 using Dapper;
 using System;
@@ -15,9 +15,9 @@ namespace BaaS.Repositories.Autbank
 {
     public class EBankRepository : IEBankRepository
     {
-        public async Task<ICadastrarContaResult> IncluirConta(ICadastrarContaSignature signature)
+        public async Task<CadastrarContaResult> IncluirConta(ICadastrarContaSignature signature)
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.Value))
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))
             {
                 conn.Open();
 
@@ -93,8 +93,8 @@ namespace BaaS.Repositories.Autbank
                     parameters.Add("@CODSITUACAO", signature.CODSITUACAO);
 
 
-                    var result = await conn.QueryFirstOrDefaultAsync<ICadastrarContaResult>("SP_CADASTRA_CONTA_CC_AUTK", parameters, null, null, CommandType.StoredProcedure);
-                                        
+                    var result = await conn.QueryFirstOrDefaultAsync<CadastrarContaResult>("SP_CADASTRA_CONTA_CC_AUTK", parameters, null, null, CommandType.StoredProcedure);
+
                     conn.Close();
                     return result;
                 }
@@ -105,9 +105,9 @@ namespace BaaS.Repositories.Autbank
             }
         }
 
-        public async Task<IListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
+        public async Task<ListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.Value))
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))
             {
                 conn.Open();
                 string comandoSql = "SELECT CODMODAL AS Codigo, DESCRICAO AS Modalidade, PESSOA AS TipoPessoa ";
@@ -116,39 +116,39 @@ namespace BaaS.Repositories.Autbank
                 comandoSql += " ORDER BY CAST(CODMODAL AS INT)";
 
                 try
-                {                    
-                    var result = await conn.QueryFirstOrDefaultAsync<IListarModalidadeResult>(comandoSql, null, null, null, CommandType.Text);
+                {
+                    var result = await conn.QueryFirstOrDefaultAsync<ListarModalidadeResult>(comandoSql, null, null, null, CommandType.Text);
 
                     conn.Close();
                     return result;
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    throw new Exception(ex.Message.ToString());                    
+                    throw new Exception(ex.Message.ToString());
                 }
-                finally 
+                finally
                 {
                     conn.Close();
                 }
-            }                
+            }
         }
 
-        public async Task<IListarModalidadeResult> ListarModalidades()
+        public async Task<IList<ListarModalidadeResult>> ListarModalidades()
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.Value))
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))
             {
                 conn.Open();
                 string comandoSql = "SELECT CODMODAL AS Codigo, DESCRICAO AS Modalidade, PESSOA AS TipoPessoa ";
-                comandoSql += " FROM MODALIDADE ";                
+                comandoSql += " FROM MODALIDADE ";
                 comandoSql += " ORDER BY CAST(CODMODAL AS INT)";
 
                 try
                 {
-                    var result = await conn.QueryFirstOrDefaultAsync<IListarModalidadeResult>(comandoSql, null, null, null, CommandType.Text);
+                    var result = await conn.QueryAsync<ListarModalidadeResult>(comandoSql, null, null, null, CommandType.Text);
 
                     conn.Close();
-                    return result;
+                    return result.ToList();
 
                 }
                 catch (Exception ex)

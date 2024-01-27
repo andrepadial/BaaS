@@ -9,72 +9,72 @@ namespace BaaS.Models.Autbank.Signatures
 {
     public class CadastrarContaSignature : ICadastrarContaSignature
     {
-        public string CODCOLIGADA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODAGENCIA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime NROCONTA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string DATAABERTURA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TIPODEPOSITO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ESPECIE { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TIPOCONTA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODGERENTE { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODPOSTO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string EXTBLOQUEADO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ENVIOEXTRATO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PEREXTRATO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SOLAUTOMAT { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TALBLOQUEADO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ENVIOTALAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TIPOTALAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int QTDFLTALAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ESTMINIMO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string QTDTALREQ { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int HOMEBANKING { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string NRODIASMOVHB { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODTRIBUTACAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODRETENCAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODCLIENTE_TITULARES { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODENDERECO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODCLIENTE_ENDERECO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODMODALIDADE { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ISENTOIOF { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ISENTOJURADP { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ISENTOJURSAQ { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ISENTOJURCON { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TAXAPADADP { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TAXAPADCON { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TAXAPADSAQ { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TRANSFAUTOCA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double TIPOIOF { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double TAXAADP { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double TAXACON { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double TAXASAQ { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string LIMITE { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime NROCONTR { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime DATACONTRATO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime DATAVENC { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string DATAVALCTR { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string POSSUILIMADC { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int RENAUTOMAT { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string DIADEBITO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string INDTARIFACAD { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string INDTAC { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string INDTARIFAFICHACAD { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TIPOOPERACAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime CODUSUARIO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int DATAATU_PAR { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ERRO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string IND_FAZ_TRANS { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODFAIXA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double ORDEMLIMITE { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double TAXACUSTO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TAXAINTERNA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double TPTAXAINTERNA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PERCCORRE { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SITCONTRATO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string INDTARIFARENCONTRATO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string INDTARIFAALTCONTRATO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string INDVALIDADVCONTA { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MODALORI { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CODSITUACAO { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string CODCOLIGADA {get; set; }
+        public string CODAGENCIA {get; set; }
+        public DateTime NROCONTA {get; set; }
+        public string DATAABERTURA {get; set; }
+        public string TIPODEPOSITO {get; set; }
+        public string ESPECIE {get; set; }
+        public string TIPOCONTA {get; set; }
+        public string CODGERENTE {get; set; }
+        public string CODPOSTO {get; set; }
+        public string EXTBLOQUEADO {get; set; }
+        public string ENVIOEXTRATO {get; set; }
+        public string PEREXTRATO {get; set; }
+        public string SOLAUTOMAT {get; set; }
+        public string TALBLOQUEADO {get; set; }
+        public string ENVIOTALAO {get; set; }
+        public string TIPOTALAO {get; set; }
+        public int QTDFLTALAO {get; set; }
+        public string ESTMINIMO {get; set; }
+        public string QTDTALREQ {get; set; }
+        public int HOMEBANKING {get; set; }
+        public string NRODIASMOVHB {get; set; }
+        public string CODTRIBUTACAO {get; set; }
+        public string CODRETENCAO {get; set; }
+        public string CODCLIENTE_TITULARES {get; set; }
+        public string CODENDERECO {get; set; }
+        public string CODCLIENTE_ENDERECO {get; set; }
+        public string CODMODALIDADE {get; set; }
+        public string ISENTOIOF {get; set; }
+        public string ISENTOJURADP {get; set; }
+        public string ISENTOJURSAQ {get; set; }
+        public string ISENTOJURCON {get; set; }
+        public string TAXAPADADP {get; set; }
+        public string TAXAPADCON {get; set; }
+        public string TAXAPADSAQ {get; set; }
+        public string TRANSFAUTOCA {get; set; }
+        public double TIPOIOF {get; set; }
+        public double TAXAADP {get; set; }
+        public double TAXACON {get; set; }
+        public double TAXASAQ {get; set; }
+        public string LIMITE {get; set; }
+        public DateTime NROCONTR {get; set; }
+        public DateTime DATACONTRATO {get; set; }
+        public DateTime DATAVENC {get; set; }
+        public string DATAVALCTR {get; set; }
+        public string POSSUILIMADC {get; set; }
+        public int RENAUTOMAT {get; set; }
+        public string DIADEBITO {get; set; }
+        public string INDTARIFACAD {get; set; }
+        public string INDTAC {get; set; }
+        public string INDTARIFAFICHACAD {get; set; }
+        public string TIPOOPERACAO {get; set; }
+        public DateTime CODUSUARIO {get; set; }
+        public int DATAATU_PAR {get; set; }
+        public string ERRO {get; set; }
+        public string IND_FAZ_TRANS {get; set; }
+        public string CODFAIXA {get; set; }
+        public double ORDEMLIMITE {get; set; }
+        public double TAXACUSTO {get; set; }
+        public string TAXAINTERNA {get; set; }
+        public double TPTAXAINTERNA {get; set; }
+        public string PERCCORRE {get; set; }
+        public string SITCONTRATO {get; set; }
+        public string INDTARIFARENCONTRATO {get; set; }
+        public string INDTARIFAALTCONTRATO {get; set; }
+        public string INDVALIDADVCONTA {get; set; }
+        public string MODALORI {get; set; }
+        public string CODSITUACAO {get; set; }
     }
 }

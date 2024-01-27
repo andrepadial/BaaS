@@ -8,8 +8,8 @@ namespace BaaS.Interfaces.Autbank.Models.Results
 {
     public class ListarModalidadeResult : IListarModalidadeResult
     {
-        public string Codigo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Modalidade { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TipoPessoa { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Codigo { get; set; }
+        public string Modalidade {get; set; }
+        public string TipoPessoa {get; set; }
     }
 }

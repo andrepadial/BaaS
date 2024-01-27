@@ -1,7 +1,7 @@
 ﻿using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
-using BaaS.Interfaces.Autbank.Repositories;
-using BaaS.Interfaces.Autbank.Services;
+using BaaS.Repositories.Autbank.Interfaces;
+using BaaS.Services.Autbank.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,17 +20,17 @@ namespace BaaS.Services.Autbank
             repositorio = _repositorio;
         }
 
-        public async Task<ICadastrarContaResult> IncluirConta(ICadastrarContaSignature signature)
+        public async Task<CadastrarContaResult> IncluirConta(ICadastrarContaSignature signature)
         {
             return await repositorio.IncluirConta(signature);
         }
 
-        public async Task<IListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
+        public async Task<ListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
         {
             return await repositorio.ListarModalidade(signature);
         }
 
-        public async Task<IListarModalidadeResult> ListarModalidades()
+        public async Task<IList<ListarModalidadeResult>> ListarModalidades()
         {
             return await repositorio.ListarModalidades();
         }

@@ -14,6 +14,7 @@ using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Globalization;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 
 namespace BaaS.API
@@ -29,15 +30,19 @@ namespace BaaS.API
         {
             services.Configure<IISOptions>(options => { options.ForwardClientCertificate = false; });
 
-            Repositories.Connections.ConnectionStringManager.Value = Configuration.GetConnectionString("Databaseconnection");
+            Repositories.Connections.ConnectionStringManager.EBankConnection = Configuration.GetConnectionString("DatabaseConnectionEBank");
+            Repositories.Connections.ConnectionStringManager.InfobankConnection = Configuration.GetConnectionString("DatabaseConnectionInfobank");
+            Repositories.Connections.ConnectionStringManager.ContaCorrenteConnection = Configuration.GetConnectionString("DatabaseConnectionContaCorrente");
 
             services.AddSwaggerGen(c =>
             {
+                    
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Teste",
-                    Description = "Teste"
+                    Title = "Swagger Documentação Web API",
+                    Description = "Swagger Documentação Web API",
+                    License = new OpenApiLicense() { Name = "MIT License", Url = new Uri("https://opensource.org/licenses/MIT") }
                 });
             });
 
@@ -67,7 +72,7 @@ namespace BaaS.API
         }
 
 
-        public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -92,16 +97,28 @@ namespace BaaS.API
 
             
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint($"v1/swagger.json", "BaaS");
-            });
+            app.UseSwaggerUI();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint($"v1/swagger.json", "BaaS");
+                
+            //});
 
             app.UseHttpsRedirection();
 
-            ContainerBuilder.Container().Verify();
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseCors();
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+            
+            ContainerBuilder.Container().Verify();
             //app.UseMvc();
+            
         }
 
         private static void IntegrateSimpleInjector(IServiceCollection services)

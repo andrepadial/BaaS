@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaaS.Interfaces\BaaS.Interfaces.csproj" />
+    <ProjectReference Include="..\BaaS.Models\BaaS.Models.csproj" />
+    <ProjectReference Include="..\BaaS.Repositories\BaaS.Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>

@@ -1,12 +1,12 @@
 ﻿using System;
 using BaaS.App.Autbank;
-using BaaS.Interfaces.Autbank.App;
-using BaaS.Interfaces.Autbank.Repositories;
-using BaaS.Interfaces.Autbank.Services;
+using BaaS.Repositories.Autbank.Interfaces;
 using BaaS.Repositories.Autbank;
 using BaaS.Services.Autbank;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
+using BaaS.App.Autbank.Interfaces;
+using BaaS.Services.Autbank.Interfaces;
 
 namespace BaaS.Ioc
 {

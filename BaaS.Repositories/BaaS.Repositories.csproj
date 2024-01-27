@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BaaS.Interfaces\BaaS.Interfaces.csproj" />
+    <ProjectReference Include="..\BaaS.Models\BaaS.Models.csproj" />
   </ItemGroup>
 
 </Project>

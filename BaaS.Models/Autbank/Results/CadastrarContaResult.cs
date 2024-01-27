@@ -8,6 +8,6 @@ namespace BaaS.Interfaces.Autbank.Models.Results
 {
     public class CadastrarContaResult : ICadastrarContaResult
     {
-        public long retorno { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public long retorno {get; set; }
     }
 }

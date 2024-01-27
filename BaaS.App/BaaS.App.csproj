@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Autbank\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BaaS.Interfaces\BaaS.Interfaces.csproj" />
+    <ProjectReference Include="..\BaaS.Services\BaaS.Services.csproj" />
   </ItemGroup>
 
 </Project>

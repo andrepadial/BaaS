@@ -7,9 +7,9 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using BaaS.Interfaces.Autbank.App;
 using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
+using BaaS.App.Autbank.Interfaces;
 
 namespace BaaS.API.Controllers
 {
