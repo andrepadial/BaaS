@@ -24,6 +24,7 @@
     <PackageReference Include="SimpleInjector.Integration.AspNetCore.Mvc.Core" Version="5.5.0" />
     <PackageReference Include="SimpleInjector.Integration.ServiceCollection" Version="5.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     <PackageReference Include="System.Globalization" Version="4.3.0" />
   </ItemGroup>
 

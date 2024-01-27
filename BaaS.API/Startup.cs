@@ -36,7 +36,7 @@ namespace BaaS.API
 
             services.AddSwaggerGen(c =>
             {
-                    
+                c.EnableAnnotations();       
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",

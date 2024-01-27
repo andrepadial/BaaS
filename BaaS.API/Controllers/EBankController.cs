@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
 using BaaS.App.Autbank.Interfaces;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BaaS.API.Controllers
 {
@@ -28,6 +29,7 @@ namespace BaaS.API.Controllers
         [Route("ListarModalidades")]
         [ProducesResponseType(typeof(IListarModalidadeResult), (int)HttpStatusCode.OK)]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+        [SwaggerOperation(Summary = "Obtém a lista de modalidades do EBank")]
         public async Task<IActionResult> ListarModalidades()
         {
             try
