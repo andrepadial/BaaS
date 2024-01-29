@@ -1,5 +1,6 @@
 ﻿using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
+using BaaS.Models.Autbank.Results;
 using BaaS.Repositories.Autbank.Interfaces;
 using BaaS.Services.Autbank.Interfaces;
 using System;
@@ -33,6 +34,18 @@ namespace BaaS.Services.Autbank
         public async Task<IList<ListarModalidadeResult>> ListarModalidades()
         {
             return await repositorio.ListarModalidades();
+        }
+
+        public async Task<ListarSaldoContarResult> ListarSaldoConta(IListarSaldoContaSignature signature)
+        {
+            var result = await repositorio.ListarSaldoConta(signature);
+            
+            if (result != null)
+            {
+                result.SaldoDisponivel = result.SaldoD0 + result.Limite - result.Cpmf - result.SaldoBloqueadoCip - result.SaldoBloqueado - result.ValorBloqueado + result.SaldoProvisorio;
+            }
+
+            return result;
         }
     }
 }

@@ -76,5 +76,23 @@ namespace BaaS.API.Controllers
                 throw new Exception(ex.Message.ToString());
             }
         }
+
+        [HttpPost]
+        [Route("ListarSaldoConta")]
+        [ProducesResponseType(typeof(ICadastrarContaResult), (int)HttpStatusCode.OK)]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+        [SwaggerOperation(Summary = "Obtém o saldo da conta pesquisada")]
+        public async Task<IActionResult> ListarSaldoConta(IListarSaldoContaSignature signature)
+        {
+            try
+            {
+                var result = await ebankApp.ListarSaldoConta(signature);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message.ToString());
+            }
+        }
     }
 }

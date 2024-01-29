@@ -10,7 +10,7 @@ namespace BaaS.Interfaces.Autbank.Models.Signatures
     {
         string CODCOLIGADA { get; set; }
         string CODAGENCIA { get; set; }
-        DateTime NROCONTA { get; set; }
+        string NROCONTA { get; set; }
         string DATAABERTURA { get; set; }
         string TIPODEPOSITO { get; set; }
         string ESPECIE { get; set; }

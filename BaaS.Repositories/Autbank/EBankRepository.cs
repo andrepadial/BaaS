@@ -1,5 +1,6 @@
 ﻿using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
+using BaaS.Models.Autbank.Results;
 using BaaS.Repositories.Autbank.Interfaces;
 using BaaS.Repositories.Connections;
 using Dapper;
@@ -150,6 +151,34 @@ namespace BaaS.Repositories.Autbank
                     conn.Close();
                     return result.ToList();
 
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public async Task<ListarSaldoContarResult> ListarSaldoConta(IListarSaldoContaSignature signature)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))
+            {
+                conn.Open();
+
+                try
+                {
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CODCOLIGADA", signature.CodigoColigada);
+                    parameters.Add("@CODAGENCIA", signature.CodigoAgencia);
+                    parameters.Add("@NROCONTA", signature.Conta);
+
+                    var result = await conn.QueryFirstOrDefaultAsync<ListarSaldoContarResult>("BAAS_SALDO_CONTA", parameters, null, null, CommandType.StoredProcedure);                                       
+                    conn.Close();
+                    return result;
                 }
                 catch (Exception ex)
                 {

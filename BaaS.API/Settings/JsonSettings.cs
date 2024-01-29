@@ -25,7 +25,8 @@ namespace BaaS.API.Settings
             {
                 new AbstractConverter<ICadastrarContaSignature,CadastrarContaSignature >(),
                 new AbstractConverter<IListarModalidadeSignature,ListarModalidadeSignature >(),
-                
+                new AbstractConverter<IListarSaldoContaSignature,ListarSaldoContaSignature >(),
+
             };
         }
     }

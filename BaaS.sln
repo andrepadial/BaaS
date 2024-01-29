@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaaS.API", "BaaS.API\BaaS.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaaS.Models", "BaaS.Models\BaaS.Models.csproj", "{4E5AE1B1-0E97-4A94-9879-3E562395BFAA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baas.Proxies", "Baas.Proxies\Baas.Proxies.csproj", "{89C7459D-90FC-4AD8-8429-A1F83826DD76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4E5AE1B1-0E97-4A94-9879-3E562395BFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5AE1B1-0E97-4A94-9879-3E562395BFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E5AE1B1-0E97-4A94-9879-3E562395BFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C7459D-90FC-4AD8-8429-A1F83826DD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C7459D-90FC-4AD8-8429-A1F83826DD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C7459D-90FC-4AD8-8429-A1F83826DD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C7459D-90FC-4AD8-8429-A1F83826DD76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

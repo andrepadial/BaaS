@@ -1,6 +1,7 @@
 ﻿using BaaS.App.Autbank.Interfaces;
 using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
+using BaaS.Models.Autbank.Results;
 using BaaS.Services.Autbank;
 using BaaS.Services.Autbank.Interfaces;
 using System;
@@ -34,6 +35,11 @@ namespace BaaS.App.Autbank
         public async Task<IList<ListarModalidadeResult>> ListarModalidades()
         {
             return await eBankService.ListarModalidades();
+        }
+
+        public async Task<ListarSaldoContarResult> ListarSaldoConta(IListarSaldoContaSignature signature)
+        {
+            return await eBankService.ListarSaldoConta(signature);
         }
     }
 }
