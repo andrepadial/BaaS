@@ -12,5 +12,7 @@ namespace BaaS.Repositories.Connections
 
         public static string InfobankConnection { set; get; }
         public static string ContaCorrenteConnection { set; get; }
+
+        public static string PixConnection { set; get; }
     }
 }

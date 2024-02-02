@@ -36,18 +36,21 @@ namespace BaaS.Ioc
         {
             _container.Register<IEBankApp, EBankApp>(Lifestyle.Scoped);
             _container.Register<IInfobankApp, InfobankApp>(Lifestyle.Scoped);
+            _container.Register<IPixApp, PixApp>(Lifestyle.Scoped);
         }
 
         private static void RegisterServices()
         {
             _container.Register<IEBankService, EBankService>(Lifestyle.Scoped);
             _container.Register<IInfobankService, InfobankService>(Lifestyle.Scoped);
+            _container.Register<IPixService, PixService>(Lifestyle.Scoped);
         }
 
         private static void RegisterRepositories()
         {
             _container.Register<IEBankRepository, EBankRepository>(Lifestyle.Scoped);
             _container.Register<IInfobankRepository, InfobankRepository>(Lifestyle.Scoped);
+            _container.Register<IPixRepository, PixRepository>(Lifestyle.Scoped);
         }
 
         private static void RegisterProxys()

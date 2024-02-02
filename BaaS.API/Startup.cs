@@ -33,6 +33,7 @@ namespace BaaS.API
             Repositories.Connections.ConnectionStringManager.EBankConnection = Configuration.GetConnectionString("DatabaseConnectionEBank");
             Repositories.Connections.ConnectionStringManager.InfobankConnection = Configuration.GetConnectionString("DatabaseConnectionInfobank");
             Repositories.Connections.ConnectionStringManager.ContaCorrenteConnection = Configuration.GetConnectionString("DatabaseConnectionContaCorrente");
+            Repositories.Connections.ConnectionStringManager.PixConnection = Configuration.GetConnectionString("DatabaseConnectionPix");
 
             services.AddSwaggerGen(c =>
             {
