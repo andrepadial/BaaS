@@ -12,6 +12,7 @@ using BaaS.Interfaces.Autbank.Models.Signatures;
 using BaaS.App.Autbank.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 using BaaS.App.Autbank;
+using Microsoft.Extensions;
 
 namespace BaaS.API.Controllers
 {
@@ -20,10 +21,12 @@ namespace BaaS.API.Controllers
     public class InfobankController : ControllerBase
     {
         private readonly IInfobankApp infobankApp;
+        private readonly ILogger<InfobankController> _logger;
 
-        public InfobankController (IInfobankApp _infobankApp)
+        public InfobankController (IInfobankApp _infobankApp, ILogger<InfobankController> logger)
         {
             infobankApp = _infobankApp;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -35,11 +38,14 @@ namespace BaaS.API.Controllers
         {
             try
             {
+                _logger.LogInformation("Chamando API de listagem de estados.");
                 var result = await infobankApp.ListarEstados();
+                _logger.LogInformation("Retorno da API com sucesso.");
                 return Ok(result);
             }
             catch (Exception ex)
             {
+                _logger.LogInformation("Erro na API de listagem de estados:" + ex.Message.ToString());
                 throw new Exception(ex.Message.ToString());
             }
         }
