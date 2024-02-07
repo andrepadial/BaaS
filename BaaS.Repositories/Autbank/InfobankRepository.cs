@@ -17,6 +17,32 @@ namespace BaaS.Repositories.Autbank
 {
     public class InfobankRepository : IInfobankRepository
     {
+        public async Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.InfobankConnection))
+            {
+                conn.Open();
+
+                try
+                {
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CodigoCliente", signature.Codigo);
+                    
+                    var result = await conn.QueryAsync<ListarEnderecoClienteResult>("BAAS_INFOBANK_ENDERECOS", parameters, null, null, CommandType.StoredProcedure);
+                    conn.Close();
+                    return result.ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public async Task<IList<ListarEstadosResult>> ListarEstados()
         {
             using (SqlConnection conn = new SqlConnection(ConnectionStringManager.InfobankConnection))

@@ -21,6 +21,11 @@ namespace BaaS.Services.Autbank
             repositorio = _repositorio;
         }
 
+        public async Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature)
+        {
+            return await repositorio.ListarEnderecos(signature);
+        }
+
         public async Task<IList<ListarEstadosResult>> ListarEstados()
         {
             return await repositorio.ListarEstados();

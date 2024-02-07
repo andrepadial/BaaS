@@ -43,5 +43,23 @@ namespace BaaS.API.Controllers
                 throw new Exception(ex.Message.ToString());
             }
         }
+
+        [HttpPost]
+        [Route("ListarEnderecos")]
+        [ProducesResponseType(typeof(IListarEnderecoClienteResult), (int)HttpStatusCode.OK)]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+        [SwaggerOperation(Summary = "Obtém a lista de endereços do cliente")]
+        public async Task<IActionResult> ListarEnderecosCliente(IListarDadosClienteSignature signature)
+        {
+            try
+            {
+                var result = await infobankApp.ListarEnderecos(signature);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message.ToString());
+            }
+        }
     }
 }
