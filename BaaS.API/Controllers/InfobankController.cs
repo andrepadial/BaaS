@@ -29,10 +29,10 @@ namespace BaaS.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListarEstados")]
         [ProducesResponseType(typeof(IListarModalidadeResult), (int)HttpStatusCode.OK)]
-        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         [SwaggerOperation(Summary = "Obtém a lista de estados do Brasil")]
         public async Task<IActionResult> ListarModalidades()
         {
@@ -50,10 +50,10 @@ namespace BaaS.API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListarEnderecos")]
         [ProducesResponseType(typeof(IListarEnderecoClienteResult), (int)HttpStatusCode.OK)]
-        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         [SwaggerOperation(Summary = "Obtém a lista de endereços do cliente")]
         public async Task<IActionResult> ListarEnderecosCliente(IListarDadosClienteSignature signature)
         {

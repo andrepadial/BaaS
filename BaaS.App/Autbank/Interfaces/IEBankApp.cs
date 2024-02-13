@@ -15,5 +15,7 @@ namespace BaaS.App.Autbank.Interfaces
         Task<IList<ListarModalidadeResult>> ListarModalidades();
         Task<CadastrarContaResult> IncluirConta(ICadastrarContaSignature signature);
         Task<ListarSaldoContarResult> ListarSaldoConta(IListarSaldoContaSignature signature);
+        Task<IList<ListarHistoricoContaResult>> ListarHistoricos();
+        Task<ListarHistoricoContaResult> ListarHistorico(IListarHistoricoContaSignature signature);
     }
 }

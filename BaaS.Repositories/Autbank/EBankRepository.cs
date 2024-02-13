@@ -106,6 +106,56 @@ namespace BaaS.Repositories.Autbank
             }
         }
 
+        public async Task<ListarHistoricoContaResult> ListarHistorico(IListarHistoricoContaSignature signature)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))
+            {
+                conn.Open();
+
+                try
+                {
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CODHIST", signature.Codigo);
+                    
+
+                    var result = await conn.QueryFirstOrDefaultAsync<ListarHistoricoContaResult>("BAAS_LISTAR_HISTORICOS_CONTA", parameters, null, null, CommandType.StoredProcedure);
+                    conn.Close();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public async Task<IList<ListarHistoricoContaResult>> ListarHistoricos()
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))
+            {
+                conn.Open();
+
+                try
+                {
+                    var result = await conn.QueryAsync<ListarHistoricoContaResult>("BAAS_LISTAR_HISTORICOS_CONTA", null, null, null, CommandType.StoredProcedure);
+                    conn.Close();
+                    return result.ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public async Task<ListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionStringManager.EBankConnection))

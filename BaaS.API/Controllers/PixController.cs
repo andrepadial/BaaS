@@ -27,10 +27,10 @@ namespace BaaS.API.Controllers
             this.pixApp = _pixApp;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListarMovimentosPix")]
         [ProducesResponseType(typeof(IListarMovimentosPixResult), (int)HttpStatusCode.OK)]
-        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         [SwaggerOperation(Summary = "Obtém a lista de movimentos de PIX em um período")]
         public async Task<IActionResult> ListarMovimentos(IListarMovimentosPixSignature signature)
         {

@@ -27,6 +27,16 @@ namespace BaaS.App.Autbank
             return await eBankService.IncluirConta(signature);
         }
 
+        public async Task<ListarHistoricoContaResult> ListarHistorico(IListarHistoricoContaSignature signature)
+        {
+            return await eBankService.ListarHistorico(signature);
+        }
+
+        public async Task<IList<ListarHistoricoContaResult>> ListarHistoricos()
+        {
+            return await eBankService.ListarHistoricos();
+        }
+
         public async Task<ListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
         {
             return await eBankService.ListarModalidade(signature);

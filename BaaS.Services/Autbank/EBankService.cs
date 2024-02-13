@@ -26,6 +26,16 @@ namespace BaaS.Services.Autbank
             return await repositorio.IncluirConta(signature);
         }
 
+        public async Task<ListarHistoricoContaResult> ListarHistorico(IListarHistoricoContaSignature signature)
+        {
+            return await repositorio.ListarHistorico(signature);
+        }
+
+        public async Task<IList<ListarHistoricoContaResult>> ListarHistoricos()
+        {
+            return await repositorio.ListarHistoricos();
+        }
+
         public async Task<ListarModalidadeResult> ListarModalidade(IListarModalidadeSignature signature)
         {
             return await repositorio.ListarModalidade(signature);
