@@ -1,4 +1,5 @@
 ﻿using BaaS.Interfaces.Autbank.Models.Signatures;
+using BaaS.Models.Autbank.IB;
 using BaaS.Models.Autbank.Results;
 using System;
 using System.Collections.Generic;
@@ -13,5 +14,7 @@ namespace BaaS.App.Autbank.Interfaces
         Task<IList<ListarEstadosResult>> ListarEstados();
 
         Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature);
+
+        Task<IList<Coligada>> ListarColigadas();
     }
 }

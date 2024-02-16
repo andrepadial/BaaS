@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions;
 using Microsoft.Extensions.Logging;
+using BaaS.Models.Autbank.IB;
 
 namespace BaaS.App.Autbank
 {
@@ -21,6 +22,11 @@ namespace BaaS.App.Autbank
         {
             infobankService = _infobankService;
             _logger = logger;
+        }
+
+        public async Task<IList<Coligada>> ListarColigadas()
+        {
+            return await infobankService.ListarColigadas();
         }
 
         public async Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature)

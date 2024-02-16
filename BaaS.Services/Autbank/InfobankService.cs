@@ -1,5 +1,6 @@
 ﻿using BaaS.Interfaces.Autbank.Models.Results;
 using BaaS.Interfaces.Autbank.Models.Signatures;
+using BaaS.Models.Autbank.IB;
 using BaaS.Models.Autbank.Results;
 using BaaS.Repositories.Autbank.Interfaces;
 using BaaS.Services.Autbank.Interfaces;
@@ -19,6 +20,11 @@ namespace BaaS.Services.Autbank
         public InfobankService(IInfobankRepository _repositorio)
         {
             repositorio = _repositorio;
+        }
+
+        public async Task<IList<Coligada>> ListarColigadas()
+        {
+            return await repositorio.ListarColigadas();
         }
 
         public async Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature)

@@ -13,6 +13,7 @@ using BaaS.App.Autbank.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 using BaaS.App.Autbank;
 using Microsoft.Extensions;
+using BaaS.Interfaces.Autbank.Models.Infobank;
 
 namespace BaaS.API.Controllers
 {
@@ -46,6 +47,27 @@ namespace BaaS.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogInformation("Erro na API de listagem de estados:" + ex.Message.ToString());
+                throw new Exception(ex.Message.ToString());
+            }
+        }
+
+        [HttpGet]
+        [Route("ListarColigadas")]
+        [ProducesResponseType(typeof(IColigada), (int)HttpStatusCode.OK)]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
+        [SwaggerOperation(Summary = "Obtém a lista de coligadas")]
+        public async Task<IActionResult> ListarColigadas()
+        {
+            try
+            {
+                _logger.LogInformation("Chamando API de listagem de coligadas.");
+                var result = await infobankApp.ListarColigadas();
+                _logger.LogInformation("Retorno da API com sucesso.");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Erro na API de listagem de coligadas:" + ex.Message.ToString());
                 throw new Exception(ex.Message.ToString());
             }
         }
