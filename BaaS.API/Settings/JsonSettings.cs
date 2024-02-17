@@ -29,7 +29,7 @@ namespace BaaS.API.Settings
                 new AbstractConverter<IListarMovimentosPixSignature,ListarMovimentosPixSignature >(),
                 new AbstractConverter<IListarDadosClienteSignature,ListarDadosClienteSignature >(),
                 new AbstractConverter<IListarHistoricoContaSignature,ListarHistoricoContaSignature >(),
-
+                new AbstractConverter<IListarAgenciaBancoSignature, ListarAgenciaBancoSignature >(),
             };
         }
     }

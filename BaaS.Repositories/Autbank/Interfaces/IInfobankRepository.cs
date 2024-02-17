@@ -13,9 +13,7 @@ namespace BaaS.Repositories.Autbank.Interfaces
     public interface IInfobankRepository
     {
         Task<IList<ListarEstadosResult>> ListarEstados();
-
-        Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature);
-
+        Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature);        
         Task<IList<Coligada>> ListarColigadas();
     }
 }

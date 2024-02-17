@@ -20,7 +20,7 @@ namespace BaaS.Services.Autbank
         public InfobankService(IInfobankRepository _repositorio)
         {
             repositorio = _repositorio;
-        }
+        }        
 
         public async Task<IList<Coligada>> ListarColigadas()
         {

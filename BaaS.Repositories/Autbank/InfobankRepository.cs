@@ -18,6 +18,8 @@ namespace BaaS.Repositories.Autbank
 {
     public class InfobankRepository : IInfobankRepository
     {
+        
+
         public async Task<IList<Coligada>> ListarColigadas()
         {
             using (SqlConnection conn = new SqlConnection(ConnectionStringManager.InfobankConnection))

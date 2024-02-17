@@ -15,6 +15,6 @@ namespace BaaS.App.Autbank.Interfaces
 
         Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature);
 
-        Task<IList<Coligada>> ListarColigadas();
+        Task<IList<Coligada>> ListarColigadas();        
     }
 }

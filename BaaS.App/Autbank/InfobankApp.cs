@@ -24,6 +24,7 @@ namespace BaaS.App.Autbank
             _logger = logger;
         }
 
+
         public async Task<IList<Coligada>> ListarColigadas()
         {
             return await infobankService.ListarColigadas();

@@ -13,6 +13,6 @@ namespace BaaS.Services.Autbank.Interfaces
     {
         Task<IList<ListarEstadosResult>> ListarEstados();
         Task<IList<ListarEnderecoClienteResult>> ListarEnderecos(IListarDadosClienteSignature signature);
-        Task<IList<Coligada>> ListarColigadas();
+        Task<IList<Coligada>> ListarColigadas();        
     }
 }

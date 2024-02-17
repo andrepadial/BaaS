@@ -1,15 +1,13 @@
-﻿using BaaS.Interfaces.Autbank.Models.Infobank;
-using BaaS.Models.Autbank.Interfaces;
-using Swashbuckle.AspNetCore.Annotations;
+﻿using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaaS.Models.Autbank.IB
+namespace BaaS.Models.Autbank.Interfaces
 {
-    public class BancoAgencia : IBancoAgencia
+    public interface IBancoAgencia
     {
         [SwaggerSchema(Description = "Código da agência")]
         public string CodigoAgencia { get; set; }
